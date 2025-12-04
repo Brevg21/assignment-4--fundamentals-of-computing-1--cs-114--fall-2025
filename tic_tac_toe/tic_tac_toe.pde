@@ -12,8 +12,8 @@ void keyPressed() {
   if (key >= '0' && key <='8') {
     int cell = key - '0';
     int row = cell/3;
-    int collumn = cell % 3;
-    placeMove(row, collumn);
+    int column = cell % 3;
+    placeMove(row, column);
   }
   else println("You did not press a key between 0 and 8");
 }

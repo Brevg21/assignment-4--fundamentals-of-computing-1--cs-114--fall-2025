@@ -1,26 +1,26 @@
 void initializeGame() {
   for (int row=0; row<3; row++){
-    for(int collumn = 0; collumn <3; collumn++){
-      board[row][collumn]=EMPTY;
+    for(int column = 0; column <3; column++){
+      board[row][column]=EMPTY;
     }
   }
 }
 
-void placeMove(int row, int collumn){
+void placeMove(int row, int column){
   if (gameState != ONGOING){
     println("The game has already ended");
     return;
   }
-  if (board[row][collumn] != EMPTY) return;
+  if (board[row][column] != EMPTY) return;
 
-  board[row][collumn] = O;
+  board[row][column] = O;
   gameState = checkGameState();
 
   if (gameState == OWIN) {
     println("The player has won");
     return;
   }
-  if(gameState == X_WIN) {
+  if(gameState == XWIN) {
     println("The computer has won");
     return;
   }
@@ -37,7 +37,7 @@ void placeMove(int row, int collumn){
     println("The player has won");
     return;
   }
-  if(gameState == X_WIN) {
+  if(gameState == XWIN) {
     println("The computer has won");
     return;
   }
@@ -73,26 +73,26 @@ int switchPlayer(int player) {
 int checkGameState() {
   for (int row = 0; row < 3; row++){
     int sum = board[row][0] + board[row][1] + board [row][2];
-    if (sum == 3) return X_WIN;
+    if (sum == 3) return XWIN;
     if (sum == -3) return OWIN;
   }
-  for (int collumn = 0; collumn <3; collumn++){
-    int sum = board[0][collumn] + board[1][collumn] + board [2][collumn];
-    if ( sum ==3) return X_WIN;
+  for (int column = 0; column <3; column++){
+    int sum = board[0][column] + board[1][column] + board [2][column];
+    if ( sum ==3) return XWIN;
     if(sum == -3) return OWIN;
   }
 
   int diagonalOne = board[0][0] + board[1][1] + board [2][2];
-  if (diagonalOne == 3)return X_WIN;
+  if (diagonalOne == 3)return XWIN;
   if (diagonalOne == -3) return OWIN;
 
   int diagonalTwo = board[0][2] + board[1][1] + board [2][0];
-  if (diagonalTwo == 3)return X_WIN;
+  if (diagonalTwo == 3)return XWIN;
   if (diagonalTwo == -3) return OWIN;
 
   for (int row =0; row < 3; row++){
-    for(int collumn = 0; collumn < 3; collumn++){
-      if(board[row][collumn]== EMPTY){
+    for(int column = 0; column < 3; column++){
+      if(board[row][column]== EMPTY){
         return ONGOING;
       }
     }

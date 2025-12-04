@@ -22,22 +22,22 @@ void drawMarks() {
 
 }
 
-void drawX(int r, int c){
-  float posOne = c * CELLSIZE + CELLSIZE/2;
-  float posTwo = r * CELLSIZE + CELLSIZE/2;
-  float d = CELLSIZE*0.35;
+void drawX(int row, int column){
+  float axisOne = column * CELLSIZE + CELLSIZE/2;
+  float axisTwo = row * CELLSIZE + CELLSIZE/2;
+  float diameter = CELLSIZE*0.35;
 
   strokeWeight(6);
-  line (posOne-d, posTwo-d, posOne +d, posTwo+d);
-  line (posOne-d,posTwo +d, posOne+d, posTwo-d);
+  line (axisOne-diameter, axisTwo-diameter, axisOne + diameter, axisTwo+diameter);
+  line (axisOne- diameter,axisTwo + diameter, axisOne + diameter, axisTwo - diameter);
 }
 
-void drawO(int r, int c) {
-  float posOne = c * CELLSIZE + CELLSIZE/2;
-  float posTwo = r * CELLSIZE + CELLSIZE/2;
+void drawO(int row, int column) {
+  float axisOne = column * CELLSIZE + CELLSIZE/2;
+  float axisTwo = row * CELLSIZE + CELLSIZE/2;
   float radius = CELLSIZE*0.4;
 
   strokeWeight(6);
   noFill();
-  ellipse(posOne,posTwo, radius*2,radius*2);
+  ellipse(axisOne,axisTwo, radius*2,radius*2);
 }

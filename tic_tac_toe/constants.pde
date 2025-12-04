@@ -8,6 +8,6 @@ final int X = 1;
   final float CELLSIZE = 500.0/3.0;
 
   final int ONGOING = 0;
-  final int X_WIN = 1;
+  final int XWIN = 1;
   final int OWIN = -1;
   final int DRAW = 2;
