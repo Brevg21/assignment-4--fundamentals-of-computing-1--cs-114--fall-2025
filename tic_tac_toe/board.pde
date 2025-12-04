@@ -45,7 +45,6 @@ void placeMove(int row, int column){
     println("No one won");
     return;
   }
-
 }
 
 void aiMove(){
@@ -64,7 +63,6 @@ void aiMove(){
   int index = int(random(emptyCells.size()));
   int[] cell = emptyCells.get(index);
   board[cell[0]][cell[1]] = X;
-
 }
 int switchPlayer(int player) {
   return (player == X) ? O : X;
@@ -97,6 +95,5 @@ int checkGameState() {
       }
     }
   }
-
   return DRAW;
 }
